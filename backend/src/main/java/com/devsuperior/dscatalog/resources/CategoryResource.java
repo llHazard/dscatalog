@@ -39,7 +39,7 @@ public class CategoryResource {
 		
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 		
-		List<CategoryDTO> list = service.findAll();
+		Page<CategoryDTO> list = service.findAllPaged(pageRequest);
 		return ResponseEntity.ok().body(list);
 	}
 
